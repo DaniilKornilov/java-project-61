@@ -1,7 +1,9 @@
 # Mind Games
 
-![Java CI](https://github.com/hexlet-boilerplates/java-package/workflows/Java%20CI/badge.svg)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hexlet-boilerplates_java-package&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=hexlet-boilerplates_java-package)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=hexlet-boilerplates_java-package&metric=bugs)](https://sonarcloud.io/summary/new_code?id=hexlet-boilerplates_java-package)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=hexlet-boilerplates_java-package&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=hexlet-boilerplates_java-package)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=hexlet-boilerplates_java-package&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=hexlet-boilerplates_java-package)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=alert_status)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=bugs)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=vulnerabilities)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=code_smells)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=reliability_rating)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=security_rating)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
