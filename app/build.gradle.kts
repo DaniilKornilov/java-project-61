@@ -1,5 +1,5 @@
 plugins {
-    id("java")
+    id("application")
     id("com.github.ben-manes.versions") version "0.53.0"
 }
 
@@ -10,6 +10,10 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(21))
     }
+}
+
+application {
+    mainClass.set("hexlet.code.App")
 }
 
 repositories {
