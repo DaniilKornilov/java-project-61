@@ -1,7 +1,34 @@
 package hexlet.code;
 
+import hexlet.code.game.EvenGame;
+import hexlet.code.greet.Greeting;
+
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
-        Cli.greeting();
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.println("1 - Greet");
+        System.out.println("2 - EvenGame");
+        System.out.println("0 - Exit");
+
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Your choice: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 0:
+                    break;
+                case 1:
+                    Greeting.greetPlayerAndReturnName(scanner);
+                    break;
+                case 2:
+                    EvenGame.play(scanner);
+                    break;
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        }
     }
 }

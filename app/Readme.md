@@ -7,3 +7,6 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=reliability_rating)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=security_rating)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
+
+## Even Game Demo
+[![asciinema](https://asciinema.org/a/vp8kWhvCTYY7ALkiqa1jv15RD.svg)](https://asciinema.org/a/vp8kWhvCTYY7ALkiqa1jv15RD)
