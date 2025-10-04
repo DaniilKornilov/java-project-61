@@ -1,14 +1,12 @@
 package hexlet.code;
 
-import hexlet.code.game.CalculatorGame;
-import hexlet.code.game.EvenGame;
-import hexlet.code.game.GcdGame;
-import hexlet.code.game.ProgressionGame;
+import hexlet.code.game.*;
 import hexlet.code.greeting.Greeting;
 
 import java.util.Scanner;
 
 public class App {
+
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -16,6 +14,7 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
 
         try (Scanner scanner = new Scanner(System.in)) {
@@ -40,6 +39,9 @@ public class App {
                     break;
                 case 5:
                     ProgressionGame.play(scanner);
+                    break;
+                case 6:
+                    PrimeGame.play(scanner);
                     break;
                 default:
                     System.out.println("Invalid choice.");

@@ -21,7 +21,7 @@ public class RandomUtils {
             case 0 -> "+";
             case 1 -> "-";
             case 2 -> "*";
-            default -> throw new IllegalStateException("Unexpected value: " + operationNumber);
+            default -> throw new IllegalStateException("Unexpected operation number: " + operationNumber);
         };
     }
 

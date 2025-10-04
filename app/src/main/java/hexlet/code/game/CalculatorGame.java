@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class CalculatorGame {
     private static final String QUESTION = "What is the result of the expression?";
+    private static final int MAX_NUMBER_EXCLUSIVE = 100;
 
     private CalculatorGame() {
     }
@@ -31,8 +32,8 @@ public class CalculatorGame {
     }
 
     private static String generateQuestion() {
-        return RandomUtils.generateNumber(100) +
+        return RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE) +
                 RandomUtils.generateRandomOperation() +
-                RandomUtils.generateNumber(100);
+                RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE);
     }
 }

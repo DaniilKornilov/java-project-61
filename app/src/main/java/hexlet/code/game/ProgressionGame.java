@@ -5,6 +5,8 @@ import hexlet.code.RandomUtils;
 
 import java.util.Scanner;
 
+import static hexlet.code.game.GameConstants.DELIMITER;
+
 public class ProgressionGame {
     private static final String QUESTION = "What number is missing in the progression?";
     private static final String PLACEHOLDER = "..";
@@ -17,7 +19,7 @@ public class ProgressionGame {
     }
 
     private static String calculateCorrectAnswer(String question) {
-        String[] parts = question.split(" ");
+        String[] parts = question.split(DELIMITER);
 
         int missingIndex = -1;
         for (int i = 0; i < parts.length; i++) {
@@ -62,6 +64,6 @@ public class ProgressionGame {
             }
         }
 
-        return String.join(" ", progression);
+        return String.join(DELIMITER, progression);
     }
 }

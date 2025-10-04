@@ -5,8 +5,11 @@ import hexlet.code.RandomUtils;
 
 import java.util.Scanner;
 
+import static hexlet.code.game.GameConstants.DELIMITER;
+
 public class GcdGame {
     private static final String QUESTION = "Find the greatest common divisor of given numbers.";
+    private static final int MAX_NUMBER_EXCLUSIVE = 100;
 
     private GcdGame() {
     }
@@ -16,23 +19,22 @@ public class GcdGame {
     }
 
     private static String calculateCorrectAnswer(String question) {
-        String[] parts = question.split(" ");
+        String[] parts = question.split(DELIMITER);
         int num1 = Integer.parseInt(parts[0]);
         int num2 = Integer.parseInt(parts[1]);
 
-        return String.valueOf(gcdByEuclidsAlgorithm(num1, num2));
-    }
-
-    private static int gcdByEuclidsAlgorithm(int n1, int n2) {
-        if (n2 == 0) {
-            return n1;
+        while (num2 != 0) {
+            int temp = num2;
+            num2 = num1 % num2;
+            num1 = temp;
         }
-        return gcdByEuclidsAlgorithm(n2, n1 % n2);
+
+        return String.valueOf(num1);
     }
 
     private static String generateQuestion() {
-        return RandomUtils.generateNumber(100) +
-                " " +
-                RandomUtils.generateNumber(100);
+        return RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE) +
+                DELIMITER +
+                RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE);
     }
 }
