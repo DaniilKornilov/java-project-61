@@ -34,18 +34,20 @@ public final class ProgressionGame {
         int step;
         int missingValue;
 
+        final int stepDifference = 1;
         if (missingIndex == 0) {
             // Missing at start
             step = Integer.parseInt(parts[2]) - Integer.parseInt(parts[1]);
             missingValue = Integer.parseInt(parts[1]) - step;
         } else if (missingIndex == parts.length - 1) {
             // Missing at end
-            step = Integer.parseInt(parts[parts.length - 2]) - Integer.parseInt(parts[parts.length - 3]);
-            missingValue = Integer.parseInt(parts[parts.length - 2]) + step;
+            step = Integer.parseInt(parts[parts.length - stepDifference - 1])
+                    - Integer.parseInt(parts[parts.length - stepDifference - 2]);
+            missingValue = Integer.parseInt(parts[parts.length - stepDifference - 1]) + step;
         } else {
             // Missing in the middle
-            int prev = Integer.parseInt(parts[missingIndex - 1]);
-            int next = Integer.parseInt(parts[missingIndex + 1]);
+            int prev = Integer.parseInt(parts[missingIndex - stepDifference]);
+            int next = Integer.parseInt(parts[missingIndex + stepDifference]);
             missingValue = (prev + next) / 2;
         }
         return String.valueOf(missingValue);
