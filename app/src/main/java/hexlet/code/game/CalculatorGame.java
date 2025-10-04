@@ -5,7 +5,7 @@ import hexlet.code.RandomUtils;
 
 import java.util.Scanner;
 
-public class CalculatorGame {
+public final class CalculatorGame {
     private static final String QUESTION = "What is the result of the expression?";
     private static final int MAX_NUMBER_EXCLUSIVE = 100;
 
@@ -32,8 +32,8 @@ public class CalculatorGame {
     }
 
     private static String generateQuestion() {
-        return RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE) +
-                RandomUtils.generateRandomOperation() +
-                RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE);
+        return RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE)
+                + RandomUtils.generateRandomOperation()
+                + RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE);
     }
 }

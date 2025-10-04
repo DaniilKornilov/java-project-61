@@ -8,9 +8,9 @@ import java.util.Scanner;
 import static hexlet.code.game.GameConstants.NEGATIVE_ANSWER;
 import static hexlet.code.game.GameConstants.POSITIVE_ANSWER;
 
-public class EvenGame {
-    private static final String QUESTION = "Answer '" + POSITIVE_ANSWER +
-            "' if the number is even, otherwise answer '" + NEGATIVE_ANSWER + "'.";
+public final class EvenGame {
+    private static final String QUESTION = "Answer '" + POSITIVE_ANSWER
+            + "' if the number is even, otherwise answer '" + NEGATIVE_ANSWER + "'.";
     private static final int MAX_NUMBER_EXCLUSIVE = 100;
 
     private EvenGame() {

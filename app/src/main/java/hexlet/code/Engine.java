@@ -4,11 +4,10 @@ import hexlet.code.greeting.Greeting;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
-public class Engine {
+public final class Engine {
     public static final int ROUNDS_TO_WIN = 3;
 
     private Engine() {
@@ -39,7 +38,7 @@ public class Engine {
     }
 
     private static String[] calculateCorrectAnswers(String[] questions,
-                                                    Function<String, String> calculateCorrectAnswer) {
+                                                    UnaryOperator<String> calculateCorrectAnswer) {
         String[] correctAnswers = new String[Engine.ROUNDS_TO_WIN];
         Arrays.setAll(correctAnswers, i -> calculateCorrectAnswer.apply(questions[i]));
         return correctAnswers;

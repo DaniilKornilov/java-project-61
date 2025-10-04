@@ -1,6 +1,6 @@
 package hexlet.code.game;
 
-class GameConstants {
+final class GameConstants {
     private GameConstants() {
     }
 

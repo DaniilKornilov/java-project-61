@@ -7,9 +7,11 @@ import java.util.Scanner;
 
 import static hexlet.code.game.GameConstants.DELIMITER;
 
-public class ProgressionGame {
+public final class ProgressionGame {
     private static final String QUESTION = "What number is missing in the progression?";
     private static final String PLACEHOLDER = "..";
+    private static final int MAX_NUMBER_EXCLUSIVE = 100;
+    private static final int MAX_STEP_EXCLUSIVE = 10;
 
     private ProgressionGame() {
     }
@@ -51,8 +53,8 @@ public class ProgressionGame {
 
     private static String generateQuestion() {
         int numberOfElements = RandomUtils.generateNumberOfElementsInProgression();
-        int step = RandomUtils.generateNumber(10);
-        int start = RandomUtils.generateNumber(100);
+        int step = RandomUtils.generateNumber(MAX_STEP_EXCLUSIVE);
+        int start = RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE);
         int exceptionIndex = RandomUtils.generateNumber(numberOfElements);
 
         String[] progression = new String[numberOfElements];

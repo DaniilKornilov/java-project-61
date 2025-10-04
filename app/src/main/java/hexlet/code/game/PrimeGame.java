@@ -8,9 +8,9 @@ import java.util.Scanner;
 import static hexlet.code.game.GameConstants.NEGATIVE_ANSWER;
 import static hexlet.code.game.GameConstants.POSITIVE_ANSWER;
 
-public class PrimeGame {
-    private static final String QUESTION = "Answer '" + POSITIVE_ANSWER +
-            "' if given number is prime. Otherwise answer '" + NEGATIVE_ANSWER + "'.";
+public final class PrimeGame {
+    private static final String QUESTION = "Answer '" + POSITIVE_ANSWER
+            + "' if given number is prime. Otherwise answer '" + NEGATIVE_ANSWER + "'.";
     private static final int MAX_NUMBER_EXCLUSIVE = 100;
 
     private PrimeGame() {

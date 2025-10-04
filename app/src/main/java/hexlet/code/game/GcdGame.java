@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 import static hexlet.code.game.GameConstants.DELIMITER;
 
-public class GcdGame {
+public final class GcdGame {
     private static final String QUESTION = "Find the greatest common divisor of given numbers.";
     private static final int MAX_NUMBER_EXCLUSIVE = 100;
 
@@ -33,8 +33,8 @@ public class GcdGame {
     }
 
     private static String generateQuestion() {
-        return RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE) +
-                DELIMITER +
-                RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE);
+        return RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE)
+                + DELIMITER
+                + RandomUtils.generateNumber(MAX_NUMBER_EXCLUSIVE);
     }
 }
