@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.game.CalculatorGame;
 import hexlet.code.game.EvenGame;
 import hexlet.code.greet.Greeting;
 
@@ -10,6 +11,7 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - EvenGame");
+        System.out.println("3 - Calc");
         System.out.println("0 - Exit");
 
         try (Scanner scanner = new Scanner(System.in)) {
@@ -25,6 +27,9 @@ public class App {
                     break;
                 case 2:
                     EvenGame.play(scanner);
+                    break;
+                case 3:
+                    CalculatorGame.play(scanner);
                     break;
                 default:
                     System.out.println("Invalid choice.");
