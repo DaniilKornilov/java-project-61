@@ -2,7 +2,6 @@ package hexlet.code;
 
 import hexlet.code.greeting.Greeting;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
@@ -21,33 +20,20 @@ public final class Engine {
         String name = Greeting.greetPlayerAndReturnName(scanner);
         System.out.println(question);
 
-        String[] generatedQuestions = generateQuestions(generateQuestion);
-        String[] correctAnswers = calculateCorrectAnswers(generatedQuestions, calculateCorrectAnswer);
-
         while (round < ROUNDS_TO_WIN) {
-            System.out.println("Question: " + generatedQuestions[round]);
+            String generatedQuestion = generateQuestion.get();
+            String correctAnswer = calculateCorrectAnswer.apply(generatedQuestion);
+
+            System.out.println("Question: " + generatedQuestion);
             String answer = scanner.nextLine();
 
-            if (validatePlayersAnswer(answer, correctAnswers[round], name)) {
+            if (validatePlayersAnswer(answer, correctAnswer, name)) {
                 round++;
             } else {
                 return;
             }
         }
         System.out.println("Congratulations, " + name + "!");
-    }
-
-    private static String[] calculateCorrectAnswers(String[] questions,
-                                                    UnaryOperator<String> calculateCorrectAnswer) {
-        String[] correctAnswers = new String[Engine.ROUNDS_TO_WIN];
-        Arrays.setAll(correctAnswers, i -> calculateCorrectAnswer.apply(questions[i]));
-        return correctAnswers;
-    }
-
-    private static String[] generateQuestions(Supplier<String> generateQuestion) {
-        String[] questions = new String[Engine.ROUNDS_TO_WIN];
-        Arrays.setAll(questions, i -> generateQuestion.get());
-        return questions;
     }
 
     private static boolean validatePlayersAnswer(String answer, String correctAnswer, String playerName) {
