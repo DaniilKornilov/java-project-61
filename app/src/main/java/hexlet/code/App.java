@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.game.CalculatorGame;
 import hexlet.code.game.EvenGame;
+import hexlet.code.game.GcdGame;
 import hexlet.code.greeting.Greeting;
 
 import java.util.Scanner;
@@ -12,6 +13,7 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - EvenGame");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
 
         try (Scanner scanner = new Scanner(System.in)) {
@@ -30,6 +32,9 @@ public class App {
                     break;
                 case 3:
                     CalculatorGame.play(scanner);
+                    break;
+                case 4:
+                    GcdGame.play(scanner);
                     break;
                 default:
                     System.out.println("Invalid choice.");
