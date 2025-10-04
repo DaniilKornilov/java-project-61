@@ -2,7 +2,7 @@ package hexlet.code;
 
 import hexlet.code.game.CalculatorGame;
 import hexlet.code.game.EvenGame;
-import hexlet.code.greet.Greeting;
+import hexlet.code.greeting.Greeting;
 
 import java.util.Scanner;
 
