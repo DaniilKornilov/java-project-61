@@ -2,7 +2,10 @@ package hexlet.code;
 
 import hexlet.code.greeting.Greeting;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Engine {
     public static final int ROUNDS_TO_WIN = 3;
@@ -10,10 +13,16 @@ public class Engine {
     private Engine() {
     }
 
-    public static void play(Scanner scanner, String question, String[] generatedQuestions, String[] correctAnswers) {
+    public static void play(Scanner scanner,
+                            String question,
+                            Supplier<String> generateQuestion,
+                            Function<String, String> calculateCorrectAnswer) {
         int round = 0;
         String name = Greeting.greetPlayerAndReturnName(scanner);
         System.out.println(question);
+
+        String[] generatedQuestions = generateQuestions(generateQuestion);
+        String[] correctAnswers = calculateCorrectAnswers(generatedQuestions, calculateCorrectAnswer);
 
         while (round < ROUNDS_TO_WIN) {
             System.out.println("Question: " + generatedQuestions[round]);
@@ -26,6 +35,19 @@ public class Engine {
             }
         }
         System.out.println("Congratulations, " + name + "!");
+    }
+
+    private static String[] calculateCorrectAnswers(String[] questions,
+                                                    Function<String, String> calculateCorrectAnswer) {
+        String[] correctAnswers = new String[Engine.ROUNDS_TO_WIN];
+        Arrays.setAll(correctAnswers, i -> calculateCorrectAnswer.apply(questions[i]));
+        return correctAnswers;
+    }
+
+    private static String[] generateQuestions(Supplier<String> generateQuestion) {
+        String[] questions = new String[Engine.ROUNDS_TO_WIN];
+        Arrays.setAll(questions, i -> generateQuestion.get());
+        return questions;
     }
 
     private static boolean validatePlayersAnswer(String answer, String correctAnswer, String playerName) {

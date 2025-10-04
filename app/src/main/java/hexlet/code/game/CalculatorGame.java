@@ -3,7 +3,6 @@ package hexlet.code.game;
 import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class CalculatorGame {
@@ -13,22 +12,7 @@ public class CalculatorGame {
     }
 
     public static void play(Scanner scanner) {
-        String[] questions = generateQuestions();
-        String[] correctAnswers = calculateCorrectAnswers(questions);
-
-        Engine.play(scanner, QUESTION, questions, correctAnswers);
-    }
-
-    private static String[] calculateCorrectAnswers(String[] questions) {
-        String[] correctAnswers = new String[Engine.ROUNDS_TO_WIN];
-        Arrays.setAll(correctAnswers, i -> calculateCorrectAnswer(questions[i]));
-        return correctAnswers;
-    }
-
-    private static String[] generateQuestions() {
-        String[] questions = new String[Engine.ROUNDS_TO_WIN];
-        Arrays.setAll(questions, i -> generateQuestion());
-        return questions;
+        Engine.play(scanner, QUESTION, CalculatorGame::generateQuestion, CalculatorGame::calculateCorrectAnswer);
     }
 
     private static String calculateCorrectAnswer(String question) {
