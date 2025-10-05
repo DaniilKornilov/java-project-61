@@ -18,10 +18,7 @@ application {
 }
 
 checkstyle {
-    // Use the version of Checkstyle you want
     toolVersion = "11.1.0"
-
-    // Optional: point to your custom config
     configFile = file("$rootDir/config/checkstyle.xml")
 }
 
