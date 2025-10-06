@@ -3,8 +3,6 @@ package hexlet.code.game;
 import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
-import static hexlet.code.Engine.ANSWER_INDEX;
-import static hexlet.code.Engine.QUESTION_INDEX;
 import static hexlet.code.Engine.ROUNDS_TO_WIN;
 import static hexlet.code.game.GameConstants.DELIMITER;
 import static hexlet.code.game.GameConstants.EMPTY_STRING;
@@ -19,12 +17,15 @@ public final class CalculatorGame {
     public static void play() {
         String[][] questionsToAnswers = new String[ROUNDS_TO_WIN][2];
         for (int i = 0; i < ROUNDS_TO_WIN; i++) {
-            String question = generateQuestion();
-            questionsToAnswers[i][QUESTION_INDEX] = question;
-            questionsToAnswers[i][ANSWER_INDEX] = calculateCorrectAnswer(question);
+            questionsToAnswers[i] = generateQuestionAnswerPair();
         }
 
         Engine.play(QUESTION, questionsToAnswers);
+    }
+
+    private static String[] generateQuestionAnswerPair() {
+        String question = generateQuestion();
+        return new String[] {question, calculateCorrectAnswer(question)};
     }
 
     private static String calculateCorrectAnswer(String question) {

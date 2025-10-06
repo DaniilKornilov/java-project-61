@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 public final class Engine {
     public static final int ROUNDS_TO_WIN = 3;
-    public static final int QUESTION_INDEX = 0;
-    public static final int ANSWER_INDEX = 1;
+    private static final int QUESTION_INDEX = 0;
+
+    private static final int ANSWER_INDEX = 1;
 
     private Engine() {
     }
