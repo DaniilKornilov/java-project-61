@@ -27,36 +27,34 @@ public final class App {
         System.out.println(PROGRESSION_GAME_CHOICE + " - Progression");
         System.out.println(PRIME_GAME_CHOICE + " - Prime");
         System.out.println(EXIT_CHOICE + " - Exit");
+        System.out.print("Your choice: ");
 
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Your choice: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
 
-            switch (choice) {
-                case EXIT_CHOICE:
-                    break;
-                case GREET_CHOICE:
-                    Greeting.greetPlayerAndReturnName(scanner);
-                    break;
-                case EVEN_GAME_CHOICE:
-                    EvenGame.play(scanner);
-                    break;
-                case CALC_GAME_CHOICE:
-                    CalculatorGame.play(scanner);
-                    break;
-                case GCD_GAME_CHOICE:
-                    GcdGame.play(scanner);
-                    break;
-                case PROGRESSION_GAME_CHOICE:
-                    ProgressionGame.play(scanner);
-                    break;
-                case PRIME_GAME_CHOICE:
-                    PrimeGame.play(scanner);
-                    break;
-                default:
-                    System.out.println("Invalid choice.");
-            }
+        switch (choice) {
+            case EXIT_CHOICE:
+                break;
+            case GREET_CHOICE:
+                Greeting.greetPlayerAndReturnName();
+                break;
+            case EVEN_GAME_CHOICE:
+                EvenGame.play();
+                break;
+            case CALC_GAME_CHOICE:
+                CalculatorGame.play();
+                break;
+            case GCD_GAME_CHOICE:
+                GcdGame.play();
+                break;
+            case PROGRESSION_GAME_CHOICE:
+                ProgressionGame.play();
+                break;
+            case PRIME_GAME_CHOICE:
+                PrimeGame.play();
+                break;
+            default:
+                System.out.println("Invalid choice: " + choice + "!");
         }
     }
 }

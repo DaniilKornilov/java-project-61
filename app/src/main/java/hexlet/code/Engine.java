@@ -3,36 +3,32 @@ package hexlet.code;
 import hexlet.code.greeting.Greeting;
 
 import java.util.Scanner;
-import java.util.function.Supplier;
-import java.util.function.UnaryOperator;
 
 public final class Engine {
     public static final int ROUNDS_TO_WIN = 3;
+    public static final int QUESTION_INDEX = 0;
+    public static final int ANSWER_INDEX = 1;
 
     private Engine() {
     }
 
-    public static void play(Scanner scanner,
-                            String question,
-                            Supplier<String> generateQuestion,
-                            UnaryOperator<String> calculateCorrectAnswer) {
-        int round = 0;
-        String name = Greeting.greetPlayerAndReturnName(scanner);
+    public static void play(String question, String[][] questionsToAnswers) {
+        String name = Greeting.greetPlayerAndReturnName();
         System.out.println(question);
 
-        while (round < ROUNDS_TO_WIN) {
-            String generatedQuestion = generateQuestion.get();
-            String correctAnswer = calculateCorrectAnswer.apply(generatedQuestion);
+        Scanner scanner = new Scanner(System.in);
+        for (String[] questionToAnswer : questionsToAnswers) {
+            String generatedQuestion = questionToAnswer[QUESTION_INDEX];
+            String correctAnswer = questionToAnswer[ANSWER_INDEX];
 
             System.out.println("Question: " + generatedQuestion);
             String answer = scanner.nextLine();
 
-            if (validatePlayersAnswer(answer, correctAnswer, name)) {
-                round++;
-            } else {
+            if (!validatePlayersAnswer(answer, correctAnswer, name)) {
                 return;
             }
         }
+
         System.out.println("Congratulations, " + name + "!");
     }
 

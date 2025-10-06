@@ -3,8 +3,9 @@ package hexlet.code.game;
 import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
-import java.util.Scanner;
-
+import static hexlet.code.Engine.ANSWER_INDEX;
+import static hexlet.code.Engine.QUESTION_INDEX;
+import static hexlet.code.Engine.ROUNDS_TO_WIN;
 import static hexlet.code.game.GameConstants.DELIMITER;
 import static hexlet.code.game.GameConstants.EMPTY_STRING;
 
@@ -15,8 +16,15 @@ public final class CalculatorGame {
     private CalculatorGame() {
     }
 
-    public static void play(Scanner scanner) {
-        Engine.play(scanner, QUESTION, CalculatorGame::generateQuestion, CalculatorGame::calculateCorrectAnswer);
+    public static void play() {
+        String[][] questionsToAnswers = new String[ROUNDS_TO_WIN][2];
+        for (int i = 0; i < ROUNDS_TO_WIN; i++) {
+            String question = generateQuestion();
+            questionsToAnswers[i][QUESTION_INDEX] = question;
+            questionsToAnswers[i][ANSWER_INDEX] = calculateCorrectAnswer(question);
+        }
+
+        Engine.play(QUESTION, questionsToAnswers);
     }
 
     private static String calculateCorrectAnswer(String question) {
@@ -25,13 +33,16 @@ public final class CalculatorGame {
         int num2 = Integer.parseInt(parts[1]);
         char op = question.charAt(parts[0].length() + 1);
 
-        int result = switch (op) {
+        return String.valueOf(calculateExpression(num1, num2, op));
+    }
+
+    private static int calculateExpression(int num1, int num2, char op) {
+        return switch (op) {
             case '+' -> num1 + num2;
             case '-' -> num1 - num2;
             case '*' -> num1 * num2;
             default -> throw new IllegalArgumentException("Unknown operator: " + op);
         };
-        return String.valueOf(result);
     }
 
     private static String generateQuestion() {
