@@ -1,7 +1,6 @@
 # Mind Games
 
 ### Sonar checks:
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=alert_status)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=bugs)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=vulnerabilities)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=DaniilKornilov_java-project-61&branch=main&metric=code_smells)](https://sonarcloud.io/summary/overall?id=DaniilKornilov_java-project-61&branch=main)
